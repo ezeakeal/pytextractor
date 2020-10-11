@@ -148,6 +148,7 @@ class PyTextractor:
             # apply non-maxima suppression to suppress weak, overlapping bounding
             # boxes
             boxes = non_max_suppression(np.array(rects), probs=confidences)
+            iterations += 1
             if len(boxes) >= min_boxes:
                 return boxes
             else:
